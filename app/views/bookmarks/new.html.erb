@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <h1>Ajouter un nouveau signet à la liste <%= @list.name %></h1>
+
+  <%= form_with(model: [@list, @bookmark], local: true) do |form| %>
+    <div class="mb-3">
+      <%= form.label :movie_id, "Choisissez un film", class: "form-label" %>
+      <%= form.collection_select :movie_id, Movie.all, :id, :title, prompt: "Sélectionnez un film", class: "form-select" %>
+    </div>
+
+    <%= form.submit "Ajouter le signet", class: "btn btn-primary" %>
+    <%= link_to "Retour à la liste", list_path(@list), class: "btn btn-secondary ms-2" %>
+  <% end %>
+</div>

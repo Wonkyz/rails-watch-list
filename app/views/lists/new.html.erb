@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <h1>Créer une nouvelle liste</h1>
+
+  <%= form_with(model: @list, local: true) do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, "Nom de la liste", class: "form-label" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Entrez le nom de la liste" %>
+    </div>
+
+    <%= form.submit "Créer la liste", class: "btn btn-success" %>
+    <%= link_to "Retour aux listes", lists_path, class: "btn btn-secondary ms-2" %>
+  <% end %>
+</div>

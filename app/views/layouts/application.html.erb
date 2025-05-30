@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchList</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rails Watch List</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <%= link_to "Rails Watch List", root_path, class: "navbar-brand" %>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "Listes", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Films", movies_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
